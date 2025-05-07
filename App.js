@@ -9,7 +9,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
 
       <HeaderComponent />
-      {/* <PostComponent/> */}
+      <PostComponent/>
       <FooterComponent />
     </SafeAreaView>
   );
