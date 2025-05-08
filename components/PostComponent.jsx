@@ -3,6 +3,13 @@ import React, { useState } from "react";
 import StoriesComponent from "./StoriesComponent";
 import profilePicture from "../assets/profilePic.jpg";
 import spider from "../assets/spider.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import {
+  faBookmark,
+  faComment,
+  faHeart,
+  faPaperPlane,
+} from "@fortawesome/free-regular-svg-icons";
 
 export default function PostComponent() {
   const [post, setPost] = useState([
@@ -70,6 +77,78 @@ export default function PostComponent() {
             {/*
             Parent container for our icons and like
             */}
+
+            <View style={{ flexDirection: "row" }}>
+              <View
+                style={{
+                  flexDirection: "row",
+                  flex: 1,
+                  alignItems: "center",
+                  paddingLeft: 14,
+                  paddingTop: 10,
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  style={{ color: "white", marginRight: 5 }}
+                  size={25}
+                />
+                <Text
+                  style={{
+                    color: "white",
+                    fontWeight: "bold",
+                    marginRight: 10,
+                  }}
+                >
+                  {post.numOfLikes}
+                </Text>
+                <FontAwesomeIcon
+                  icon={faComment}
+                  style={{
+                    color: "white",
+                    transform: [{ rotateY: "180deg" }],
+                    marginRight: 20,
+                  }}
+                  size={25}
+                />
+                <FontAwesomeIcon
+                  icon={faPaperPlane}
+                  style={{ color: "white" }}
+                  size={25}
+                />
+              </View>
+
+              <View
+                style={{
+                  justifyContent: "center",
+                  paddingTop: 10,
+                  marginRight: 10,
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faBookmark}
+                  size={25}
+                  style={{ color: "white" }}
+                />
+              </View>
+            </View>
+
+            {/*
+              Description container
+               */}
+            <View style={{ paddingTop: 5, flexDirection: "row", flex: 1 }}>
+              <Text
+                style={{
+                  color: "white",
+                  fontWeight: "bold",
+                  paddingLeft: 14,
+                  paddingRight: 5,
+                }}
+              >
+                {post.userName}
+              </Text>
+              <Text style={{ color: "white" }}>{post.description}</Text>
+            </View>
           </View>
         );
       })}
