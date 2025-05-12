@@ -149,6 +149,55 @@ export default function PostComponent() {
               </Text>
               <Text style={{ color: "white" }}>{post.description}</Text>
             </View>
+
+            {post.commentsArray.map((comment, index) => {
+              return (
+                <View key={index} style={{ flex: 1, flexDirection: "row" }}>
+                  <Text
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      paddingLeft: 14,
+                      paddingRight: 5,
+                      paddingTop: 5,
+                    }}
+                  >
+                    {comment.user2}
+                  </Text>
+                  <Text style={{ color: "white", paddingTop: 5 }}>
+                    {comment.userComment}
+                  </Text>
+                </View>
+              );
+            })}
+
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <Image
+                source={post.profilepic}
+                style={{
+                  height: 30,
+                  width: 30,
+                  borderRadius: 50,
+                  marginLeft: 14,
+                  marginTop: 10,
+                }}
+              />
+              <Text
+                style={{
+                  color: "gainsboro",
+                  paddingLeft: 13,
+                  paddingTop: 8,
+                  alignSelf: "center",
+                }}
+              >
+                Add a Comment...
+              </Text>
+            </View>
+
+
+            <View>
+              <Text style={{color:'gainsboro', paddingLeft:14, paddingTop:6}} > 12 Hours Ago</Text>
+            </View>
           </View>
         );
       })}

@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import PostComponent from './components/PostComponent';
 import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <HeaderComponent />
       <PostComponent/>
       <FooterComponent />
+      <StatusBar/>
     </SafeAreaView>
   );
 }
